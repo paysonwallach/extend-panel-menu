@@ -60,7 +60,7 @@ var NightLightIndicator = new Lang.Class({
         sliderItem.actor.add(sliderIcon);
         let value = this._settings.get_uint("night-light-temperature") / 10000;
         this._slider = new Slider.Slider(value);
-        this._slider.connect('value-changed', (s, value) => this._sliderChanged(s, value));
+        this._slider.connect('notify::value', (s, value) => this._sliderChanged(s, value));
         sliderItem.actor.add(this._slider.actor, {
             expand: true
         });
