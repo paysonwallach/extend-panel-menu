@@ -14,6 +14,7 @@
     You should have received a copy of the GNU General Public License
     along with Extend Panel Menu.  If not, see <http://www.gnu.org/licenses/>.
 
+    Copyright 2019 Payson Wallach
     Copyright 2017-2018 Julio Galvan
 */
 const St = imports.gi.St;
@@ -26,7 +27,7 @@ const Gettext = imports.gettext.domain("extend-panel-menu");
 const _ = Gettext.gettext;
 const Extension = imports.misc.extensionUtils.getCurrentExtension();
 const CustomButton = Extension.imports.indicators.button.CustomButton;
-const Convenience = Extension.imports.convenience;
+const ExtensionUtils = imports.misc.extensionUtils;
 
 var VolumeIndicator = new Lang.Class({
     Name: "VolumeIndicator",
@@ -34,7 +35,7 @@ var VolumeIndicator = new Lang.Class({
 
     _init: function () {
         this.parent("VolumeIndicator");
-        this._settings = Convenience.getSettings();
+        this._settings = ExtensionUtils.getSettings();
         this.menu.actor.add_style_class_name("aggregate-menu");
         this._volume = Main.panel.statusArea.aggregateMenu._volume;
         this._volume.indicators.remove_actor(this._volume._primaryIndicator);

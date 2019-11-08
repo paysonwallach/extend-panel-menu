@@ -82,14 +82,15 @@ var NetworkIndicator = new Lang.Class({
             style_class: "system-status-icon"
         });
         this.box.add_child(this._arrowIcon);
-
+        // TODO: Refactor this block into the following
+        /*
         if (this._network) {
             this.wirelessMenu = new PopupMenu.PopupSubMenuMenuItem("", true);
             this.wirelessMenu.menu.box.add(new St.Label());
             this.menu.addMenuItem(this.wirelessMenu);
             this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
         }
-
+        */
         if (this._network) {
             Main.panel.statusArea.aggregateMenu.menu.box.remove_actor(this._network.menu.actor);
             this.menu.addMenuItem(this._network.menu);
@@ -457,7 +458,7 @@ var WirelessList = new Lang.Class({
         let rsn_flags = accessPoint.rsn_flags;
         let type;
         if (rsn_flags != imports.ui.status.network.NM80211ApSecurityFlags.NONE) {
-            //* RSN check first so that WPA+WPA2 APs are treated as RSN/WPA2 
+            //* RSN check first so that WPA+WPA2 APs are treated as RSN/WPA2
             if (rsn_flags & imports.ui.status.network.NM80211ApSecurityFlags.KEY_MGMT_802_1X)
                 type = imports.ui.status.network.NMAccessPointSecurity.WPA2_ENT;
             else if (rsn_flags & imports.ui.status.network.NM80211ApSecurityFlags.KEY_MGMT_PSK)
