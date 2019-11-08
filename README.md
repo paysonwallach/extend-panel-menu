@@ -1,97 +1,94 @@
-# Extend Panel Menu
+<div align="center">
+   <h1>Extend Panel Menu</h1>
+   <br>
+   <p>The panel menu GNOME Shell deserves</p>
+</div>
 
-![Screenshot](https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/network-v8.png)
-![Screenshot](https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/settings-v8.png)
-![Screenshot](https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/panel-v8.png)
-![Screenshot](https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/panel-theme-v8.png)
-![Screenshot](https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/nightlight-v8.png)
-![Screenshot](https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/volume-v8.png)
-![Screenshot](https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/power-v8.png)
-![Screenshot](https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/calendar-v8.png)
-![Screenshot](https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/notification-v8.png)
-![Screenshot](https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/user-v8.png)
+## Installation
 
+### From source using [`meson`](http://mesonbuild.com/)
 
-## Manual installation
-Run `make all` and  `make install`. Enable the extension via the Gnome Tweak Tool
+Clone this repository or download the [latest release](https://github.com/paysonwallach/extend-panel-menu/releases/latest).
 
-## One-click install
-It's on [Gnome Shell Extensions website](https://extensions.gnome.org/extension/1201/extend-panel-menu/)
+```sh
+git clone https://github.com/paysonwallach/extend-panel-menu.git
+```
 
+Configure the build directory at the root of the project.
 
-## Known Issues
-> This extension may not work properly in some distros
+```sh
+meson --prefix=$HOME/.local build
+```
 
-## Credits
-Settings Menu extracted from [Arc Menu](https://extensions.gnome.org/extension/1228/arc-menu/)
+Install with `ninja`.
 
-Thanks to
-- @mortezaPRK and @Arch-Lover (Persian translation)
-- @matteotanca (Italian translation)
-- @mrprobot (Geman translation)
-- @khaledhosny (Arabic translation)
-- @AlexGluck (Russian translation)
-- @emhaye (Indonesia translation)
-- @neynefes (Turkish translation)
-- @zseliakiraly (Hungarian translation)
+```sh
+ninja -C build install
+```
 
-## Changes
+Restart GNOME shell.
 
-### v9-alpha
-- Initial GNOME Shell 3.28 support
-- Drop support for GNOME Shell 3.20-24
+-   **X11/Xorg:** <kbd>Alt</kbd> + <kbd>F2</kbd> + `restart` or `r`
+-   **Wayland:** Log out and log back in
 
-### v8
-- Now you can see a list of available networks
-- Hide power indicator/label
-- New settings widget
-- Option to always show the nighlight indicator
-- Save list of recently opened mpris compartible media players
-- Indonesia/Turkish translation
-- GNOME Shell 3.26 support
+Enable the extension with [GNOME Tweaks](https://gitlab.gnome.org/GNOME/gnome-tweaks) or `gnome-extensions`.
 
-### v7
-- Set nightlight temperature via the indicator
-- Russian translation complete
+```sh
+gnome-extensions enable extend-panel-menu@julio641742
+```
 
+## Screenshots
 
-### v6
-- Auto Hide the Notification Indicator now implemented
-- Tray offset option now implemented
-- Horizontal Spacing option now implemented
-- Italian/German/Spanish/Persian/Arabic translation complete
-- Now works with "Sound Output Device Chooser" extension
-- Now works with "Dash to panel" extension
-- New Notification Icon animation
+<div align="center">
+<br>
+<a href="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/panel-v8.png"><img src="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/panel-v8.png"></a>
+<br>
+<br>
+<p>Panel</p>
+<br>
+<a href="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/user-v8.png"><img src="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/user-v8.png"></a>
+<br>
+<br>
+<p>User menu</p>
+<br>
+<a href="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/calendar-v8.png"><img src="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/calendar-v8.png"></a>
+<br>
+<br>
+<p>Calendar menu</p>
+<br>
+<a href="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/volume-v8.png"><img src="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/volume-v8.png"></a>
+<br>
+<br>
+<p>Volume menu</p>
+<br>
+<a href="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/network-v8.png"><img src="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/network-v8.png"></a>
+<br>
+<br>
+<p>Network menu</p>
+<br>
+<a href="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/power-v8.png"><img src="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/power-v8.png"></a>
+<br>
+<br>
+<p>Power menu</p>
+<br>
+<a href="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/nightlight-v8.png"><img src="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/nightlight-v8.png"></a>
+<br>
+<br>
+<p>Night Light menu</p>
+<a href="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/settings-v8.png"><img src="https://raw.githubusercontent.com/julio641742/extend-panel-menu/master/screenshots/settings-v8.png"></a>
+<br>
+<br>
+<p>Settings</p>
+</div>
 
-### v5
-- Music controls under the volume indicator
-- Now works with "Status Area Horizontal Spacing" extension
-- Improved performance when moving indicators
-- Change format of date in the calendar indicator
-- Switch between user icon/name
-- Translation ready (Looking for translators)
-- Fixed some bugs
+## Contributing
 
-### v4
-- New Settings Windows
-- Now you can rearrange your indicators
-- Now you can set a custom string in the User Indicator
-- New nighshift indicator (GNOME Shell >=3.24)
-- Added a Makefile
-- Support for GNOME Shell ~~3.18~~ and 3.20
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-### v3
-- New network menu
-- Calendar menu with Weather indicator (GNOME Shell >= 3.24)
-- Fixed some bugs
+## Code of Conduct
 
-### v2
-- Cosmetics bugfixes
-- New user menu
-- New power menu
-- Menus optimized
-- Nighshift/Weather support (GNOME Shell >= 3.24)
+By participating in this project, you agree to abide by the terms of the [Code of Conduct](https://github.com/paysonwallach/extend-panel-menu/blob/master/CODE_OF_CONDUCT.md).
 
-### v1
-- First version
+## License
+
+[Extend Panel Menu](https://github.com/paysonwallach/extend-panel-menu) is licensed under the [GNU General Public License v3.0](https://github.com/paysonwallach/extend-panel-menu/blob/master/LICENSE).
