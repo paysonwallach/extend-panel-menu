@@ -91,4 +91,4 @@ By participating in this project, you agree to abide by the terms of the [Code o
 
 ## License
 
-[Extend Panel Menu](https://github.com/paysonwallach/extend-panel-menu) is licensed under the [GNU General Public License, version 3](https://github.com/paysonwallach/extend-panel-menu/blob/master/LICENSE).
+[Extend Panel Menu](https://github.com/paysonwallach/extend-panel-menu) is licensed under the [GNU General Public License v3.0](https://github.com/paysonwallach/extend-panel-menu/blob/master/LICENSE).
