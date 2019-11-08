@@ -121,6 +121,14 @@ msgstr ""
 msgid "Center"
 msgstr ""
 
+#: ../prefs.js:539
+msgid "Up"
+msgstr ""
+
+#: ../prefs.js:550
+msgid "Down"
+msgstr ""
+
 #: ../prefs.js:573
 msgid "Top to bottom -> Left to right"
 msgstr ""
@@ -198,9 +206,53 @@ msgstr ""
 msgid "Night Light On"
 msgstr ""
 
-#: ../indicators/nightlight.js:98
+#: ../indicators/nightlight.js:106
 msgid "Disable Until Tomorrow"
+msgstr ""
 
+#: ../indicators/system.js:57
+msgid "About This Computer"
+msgstr ""
+
+#: ../indicators/system.js:61
+msgid "GNOME Help"
+msgstr ""
+
+#: ../indicators/system.js:67
+msgid "System Settings"
+msgstr ""
+
+#: ../indicators/system.js:71
+msgid "Extension Settings"
+msgstr ""
+
+#: ../indicators/system.js:77
+msgid "Lock"
+msgstr ""
+
+#: ../indicators/system.js:84
+msgid "Switch User"
+msgstr ""
+
+#: ../indicators/system.js:93
+msgid "Log Out"
+msgstr ""
+
+#: ../indicators/system.js:100
+msgid "Account Settings"
+msgstr ""
+
+#: ../indicators/system.js:115
+msgid "Suspend"
+msgstr ""
+
+#: ../indicators/system.js:122
+msgid "Power Off"
+msgstr ""
+
+#: ../indicators/volume.js:68
+msgid "Volume Settings"
+msgstr ""
 
 #: schemas.xml
 msgid "Night Light Indicator [GNOME Shell>=3.24]"
@@ -217,4 +269,3 @@ msgstr ""
 
 msgid "User Indicator"
 msgstr ""
-
