@@ -1,0 +1,6 @@
+# Distribution / Packaging
+build/
+gschemas.compiled
+
+# Translations
+*.mo
