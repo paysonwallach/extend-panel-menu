@@ -24,45 +24,45 @@ const Gio = imports.gi.Gio;
 const Shell = imports.gi.Shell;
 const PanelMenu = imports.ui.panelMenu;
 
-var CustomButton = new Lang.Class({
-    Name: "Button",
-    Extends: PanelMenu.Button,
+var CustomButton = class Button extends PanelMenu.Button {
+  _init(name) {
+    super._init(0.0, name);
+    this.name = name;
+    this._center = false;
+    this.box = new St.BoxLayout({
+      vertical: false,
+      style_class: "panel-status-menu-box"
+    });
+    this.actor.add_child(this.box);
+  }
 
-    _init: function (name) {
-        this.parent(0.0, name);
-        this.name = name;
-        this._center = false;
-        this.box = new St.BoxLayout({
-            vertical: false,
-            style_class: "panel-status-menu-box"
-        });;
-        this.actor.add_child(this.box);
-    },
-    _openApp: function (app) {
-        Shell.AppSystem.get_default().lookup_app(app).activate();
-    },
-    set_spacing: function (spacing) {
-        this._default_spacing = spacing;
-        this.update_spacing(spacing);
-    },
-    update_spacing: function (spacing) {
-        let style = '-natural-hpadding: %dpx'.format(spacing);
-        if (spacing < 6) {
-            style += '; -minimum-hpadding: %dpx'.format(spacing);
-        }
-        this.actor.set_style(style);
-    },
-    calculate_spacing: function () {
-        let style = this.actor.get_style();
-        if (style) {
-            let start = style.indexOf("-natural-hpadding: ");
-            let end = style.indexOf("px;");
-            let val = parseInt(style.substring(start + 19, end));
-            return val;
-        }
-        return NaN
-    },
-    destroy: function () {
-        this.parent();
+  _openApp(app) {
+    Shell.AppSystem.get_default()
+      .lookup_app(app)
+      .activate();
+  }
+
+  set_spacing(spacing) {
+    this._default_spacing = spacing;
+    this.update_spacing(spacing);
+  }
+
+  update_spacing(spacing) {
+    let style = "-natural-hpadding: %dpx".format(spacing);
+    if (spacing < 6) {
+      style += "; -minimum-hpadding: %dpx".format(spacing);
     }
-});
+    this.actor.set_style(style);
+  }
+
+  calculate_spacing() {
+    let style = this.actor.get_style();
+    if (style) {
+      let start = style.indexOf("-natural-hpadding: ");
+      let end = style.indexOf("px;");
+      let val = parseInt(style.substring(start + 19, end));
+      return val;
+    }
+    return NaN;
+  }
+};

@@ -33,12 +33,9 @@ const _ = Gettext.gettext;
 
 const CustomButton = Extension.imports.indicators.button.CustomButton;
 
-var NotificationIndicator = new Lang.Class({
-  Name: "NotificationIndicator",
-  Extends: CustomButton,
-
-  _init: function() {
-    this.parent("NotificationIndicator");
+var NotificationIndicator = class NotificationIndicator extends CustomButton {
+  _init() {
+    super.init("NotificationIndicator");
 
     this._messageList = Main.panel.statusArea.dateMenu._messageList;
 
@@ -80,27 +77,27 @@ var NotificationIndicator = new Lang.Class({
         }
       }
     });
-  },
-  setHide: function(value) {
+  }
+
+  setHide(value) {
     this._autoHide = value;
     if (!value) {
       this.actor.show();
     } else if (this._indicator._sources == "") {
       this.actor.hide();
     }
-  },
-  destroy: function() {
+  }
+
+  _onDestroy() {
     this._closeButton.disconnect(this._hideIndicator);
     this._vbox.remove_child(this._messageList.actor);
     this._messageListParent.add_actor(this._messageList.actor);
-    this.parent();
+    this._onDestroy();
   }
-});
+};
 
-var MessagesIndicator = new Lang.Class({
-  Name: "MessagesIndicator",
-
-  _init: function(src) {
+var MessagesIndicator = class MessagesIndicator {
+  constructor(src) {
     Gtk.IconTheme.get_default().add_resource_path(
       "resource:///org/gnome/shell/extensions/extend-panel-menu/icons/"
     );
@@ -132,13 +129,15 @@ var MessagesIndicator = new Lang.Class({
     sources.forEach(source => {
       this._onSourceAdded(null, source);
     });
-  },
-  _onSourceAdded: function(tray, source) {
+  }
+
+  _onSourceAdded(tray, source) {
     source.connect("count-updated", () => this._updateCount());
     this._sources.push(source);
     this._updateCount();
-  },
-  _updateCount: function() {
+  }
+
+  _updateCount() {
     let count = 0;
     this._sources.forEach(source => {
       //count += source.unseenCount;
@@ -148,10 +147,11 @@ var MessagesIndicator = new Lang.Class({
 
     this.actor.icon_name =
       count > 0 ? this._newNotifications : this._noNotifications;
-  },
-  destroy: function() {
+  }
+
+  destroy() {
     Main.messageTray.disconnect(this._source_added);
     Main.messageTray.disconnect(this._source_removed);
     Main.messageTray.disconnect(this._queue_changed);
   }
-});
+};
