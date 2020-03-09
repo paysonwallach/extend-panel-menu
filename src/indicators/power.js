@@ -31,7 +31,7 @@ const CustomButton = Extension.imports.indicators.button.CustomButton;
 var PowerIndicator = GObject.registerClass(
 class PowerIndicator extends CustomButton {
   _init() {
-    super.init("PowerIndicator");
+    super._init("PowerIndicator");
     this.menu.actor.add_style_class_name("aggregate-menu");
     this._power = Main.panel.statusArea.aggregateMenu._power;
     this._power.indicators.remove_actor(this._power._indicator);

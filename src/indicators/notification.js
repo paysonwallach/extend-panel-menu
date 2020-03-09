@@ -34,7 +34,7 @@ const CustomButton = Extension.imports.indicators.button.CustomButton;
 var NotificationIndicator = GObject.registerClass(
 class NotificationIndicator extends CustomButton {
   _init() {
-    super.init("NotificationIndicator");
+    super._init("NotificationIndicator");
 
     this._messageList = Main.panel.statusArea.dateMenu._messageList;
 

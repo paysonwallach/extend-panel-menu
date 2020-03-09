@@ -36,7 +36,7 @@ const Mainloop = imports.mainloop;
 var NetworkIndicator = GObject.registerClass(
 class NetworkIndicator extends CustomButton {
   _init() {
-    super.init("NetworkIndicator");
+    super._init("NetworkIndicator");
     this.menu.actor.add_style_class_name("aggregate-menu");
 
     this._network = null;
@@ -234,7 +234,7 @@ class NetworkIndicator extends CustomButton {
 var WirelessPopupMenuItem = GObject.registerClass(
 class WirelessPopupMenuItem extends PopupMenu.PopupBaseMenuItem {
   _init(network) {
-    super.init();
+    super._init();
 
     this._network = network;
     this._ap = network.accessPoints[0];
