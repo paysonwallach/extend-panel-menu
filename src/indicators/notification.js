@@ -31,7 +31,8 @@ const _ = Gettext.gettext;
 
 const CustomButton = Extension.imports.indicators.button.CustomButton;
 
-var NotificationIndicator = class NotificationIndicator extends CustomButton {
+var NotificationIndicator = GObject.registerClass(
+class NotificationIndicator extends CustomButton {
   _init() {
     super.init("NotificationIndicator");
 
@@ -92,7 +93,7 @@ var NotificationIndicator = class NotificationIndicator extends CustomButton {
     this._messageListParent.add_actor(this._messageList.actor);
     this._onDestroy();
   }
-};
+});
 
 var MessagesIndicator = class MessagesIndicator {
   constructor(src) {

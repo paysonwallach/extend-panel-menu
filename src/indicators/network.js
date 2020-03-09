@@ -33,7 +33,8 @@ const Rfkill = imports.ui.status.rfkill;
 const Util = imports.misc.util;
 const Mainloop = imports.mainloop;
 
-var NetworkIndicator = class NetworkIndicator extends CustomButton {
+var NetworkIndicator = GObject.registerClass(
+class NetworkIndicator extends CustomButton {
   _init() {
     super.init("NetworkIndicator");
     this.menu.actor.add_style_class_name("aggregate-menu");
@@ -228,9 +229,10 @@ var NetworkIndicator = class NetworkIndicator extends CustomButton {
     );
     super._onDestroy();
   }
-};
+});
 
-var WirelessPopupMenuItem = class WirelessPopupMenuItem extends PopupMenu.PopupBaseMenuItem {
+var WirelessPopupMenuItem = GObject.registerClass(
+class WirelessPopupMenuItem extends PopupMenu.PopupBaseMenuItem {
   _init(network) {
     super.init();
 
@@ -301,7 +303,7 @@ var WirelessPopupMenuItem = class WirelessPopupMenuItem extends PopupMenu.PopupB
         "-symbolic"
       );
   }
-};
+});
 
 var WirelessList = new Lang.Class({
   Name: "WirelessList",

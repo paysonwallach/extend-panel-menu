@@ -22,7 +22,8 @@ const { GObject, Shell, St } = imports.gi;
 const Lang = imports.lang;
 const PanelMenu = imports.ui.panelMenu;
 
-var CustomButton = class Button extends PanelMenu.Button {
+var CustomButton = GObject.registerClass(
+class Button extends PanelMenu.Button {
   _init(name) {
     super._init(0.0, name);
     this.name = name;
@@ -63,4 +64,4 @@ var CustomButton = class Button extends PanelMenu.Button {
     }
     return NaN;
   }
-};
+});

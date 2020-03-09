@@ -24,7 +24,8 @@ const Main = imports.ui.main;
 const Extension = imports.misc.extensionUtils.getCurrentExtension();
 const CustomButton = Extension.imports.indicators.button.CustomButton;
 
-var CalendarIndicator = class CalendarIndicator extends CustomButton {
+var CalendarIndicator = GObject.registerClass(
+class CalendarIndicator extends CustomButton {
   _init() {
     super.init("CalendarIndicator");
 
@@ -165,4 +166,4 @@ var CalendarIndicator = class CalendarIndicator extends CustomButton {
 
     super._onDestroy();
   }
-};
+});
