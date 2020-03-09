@@ -105,7 +105,7 @@ class VolumeIndicator extends CustomButton {
       removeButton.set_x_align(Clutter.ActorAlign.END);
       item.actor.add_actor(icon);
       item.actor.add_actor(label);
-      item.actor.add_actor(removeButton);super.init
+      item.actor.add_actor(removeButton);
       item.connect("activate", () => this._openApp(name + ".desktop"));
       this._playerMenuContainer.actor.add_actor(item.actor);
 
