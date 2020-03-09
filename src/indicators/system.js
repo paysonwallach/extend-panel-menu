@@ -82,9 +82,6 @@ class UserIndicator extends CustomButton {
       this._system._systemActions.activateLockScreen()
     );
     this.menu.addMenuItem(lock);
-    if (!this._system._lockScreenAction.visible) {
-      lock.actor.hide();
-    }
 
     let switchuser = new PopupMenu.PopupMenuItem(_("Switch User"));
     this.menu.addMenuItem(switchuser);
@@ -119,27 +116,18 @@ class UserIndicator extends CustomButton {
       this._system._systemActions.activateLockOrientation()
     );
     this.menu.addMenuItem(orientation);
-    if (!this._system._orientationLockAction.visible) {
-      orientation.actor.hide();
-    }
 
     let suspend = new PopupMenu.PopupMenuItem(_("Suspend"));
     suspend.connect("activate", () =>
       this._system._systemActions.activateSuspend()
     );
     this.menu.addMenuItem(suspend);
-    if (!this._system._suspendAction.visible) {
-      suspend.actor.hide();
-    }
 
     let power = new PopupMenu.PopupMenuItem(_("Power Off"));
     power.connect("activate", () =>
       this._system._systemActions.activatePowerOff()
     );
     this.menu.addMenuItem(power);
-    if (!this._system._powerOffAction.visible) {
-      power.actor.hide();
-    }
   }
 
   changeLabel(label) {
