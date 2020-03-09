@@ -1,4 +1,4 @@
-project('extend-panel-menu', version: '10', meson_version: '>= 0.50.0')
+project('extend-panel-menu', version: '11', meson_version: '>= 0.50.0')
 
 gnome = import('gnome')
 i18n = import('i18n')
