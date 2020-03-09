@@ -44,7 +44,7 @@ class VolumeIndicator extends CustomButton {
 
     this._mediaSection =
       Main.panel.statusArea.dateMenu._messageList._mediaSection;
-    Main.panel.statusArea.dateMenu._messageList._removeSection(
+    Main.panel.statusArea.dateMenu._messageList._sectionList.remove_actor(
       this._mediaSection
     );
     this._mediaSection.actor.add_style_class_name("music-box");
