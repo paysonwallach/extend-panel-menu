@@ -27,7 +27,7 @@ const CustomButton = Extension.imports.indicators.button.CustomButton;
 var CalendarIndicator = GObject.registerClass(
 class CalendarIndicator extends CustomButton {
   _init() {
-    super.init("CalendarIndicator");
+    super._init("CalendarIndicator");
 
     this._clock = Main.panel.statusArea.dateMenu._clock;
     this._calendar = Main.panel.statusArea.dateMenu._calendar;

@@ -31,7 +31,7 @@ const CustomButton = Extension.imports.indicators.button.CustomButton;
 var NightLightIndicator = GObject.registerClass(
 class NightLightIndicator extends CustomButton {
   _init() {
-    super.init("NightLightIndicator");
+    super._init("NightLightIndicator");
     this.menu.actor.add_style_class_name("aggregate-menu");
     this._nightLight = Main.panel.statusArea.aggregateMenu._nightLight;
     this.menu.box.set_width(250);

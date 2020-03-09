@@ -29,7 +29,7 @@ const CustomButton = Extension.imports.indicators.button.CustomButton;
 var UserIndicator = GObject.registerClass(
 class UserIndicator extends CustomButton {
   _init() {
-    super.init("UserIndicator");
+    super._init("UserIndicator");
     this._system = new imports.ui.status.system.Indicator();
     this._screencast = new imports.ui.status.screencast.Indicator();
 
