@@ -28,7 +28,6 @@ const _ = Gettext.gettext;
 const Extension = imports.misc.extensionUtils.getCurrentExtension();
 const CustomButton = Extension.imports.indicators.button.CustomButton;
 
-const GObject = imports.gi.GObject;
 const Rfkill = imports.ui.status.rfkill;
 const Util = imports.misc.util;
 const Mainloop = imports.mainloop;
