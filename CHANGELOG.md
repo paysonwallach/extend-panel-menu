@@ -1,5 +1,9 @@
 # Changelog
 
+## v11
+### 2020-03-08
+- GNOME Shell 3.36 support
+
 ## v10
 ### 2019-09-15
 - GNOME Shell 3.34 support
