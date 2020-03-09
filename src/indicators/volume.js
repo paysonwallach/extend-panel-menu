@@ -18,11 +18,9 @@
  * Copyright 2017-2018 Julio Galvan
  */
 
-const St = imports.gi.St;
+const { Clutter, GObject, Shell, St } = imports.gi;
 const Lang = imports.lang;
 const Main = imports.ui.main;
-const Shell = imports.gi.Shell;
-const Clutter = imports.gi.Clutter;
 const PopupMenu = imports.ui.popupMenu;
 const Gettext = imports.gettext.domain("extend-panel-menu");
 const _ = Gettext.gettext;
@@ -106,7 +104,7 @@ var VolumeIndicator = class VolumeIndicator extends CustomButton {
       removeButton.set_x_align(Clutter.ActorAlign.END);
       item.actor.add_actor(icon);
       item.actor.add_actor(label);
-      item.actor.add_actor(removeButton);super.init
+      item.actor.add_actor(removeButton);
       item.connect("activate", () => this._openApp(name + ".desktop"));
       this._playerMenuContainer.actor.add_actor(item.actor);
 

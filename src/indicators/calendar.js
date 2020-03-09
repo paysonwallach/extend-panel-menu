@@ -18,12 +18,9 @@
  * Copyright 2017-2018 Julio Galvan
  */
 
-const St = imports.gi.St;
+const { Clutter, GLib, Gtk, GObject, St } = imports.gi;
 const Lang = imports.lang;
-const Gtk = imports.gi.Gtk;
 const Main = imports.ui.main;
-const GLib = imports.gi.GLib;
-const Clutter = imports.gi.Clutter;
 const Extension = imports.misc.extensionUtils.getCurrentExtension();
 const CustomButton = Extension.imports.indicators.button.CustomButton;
 
