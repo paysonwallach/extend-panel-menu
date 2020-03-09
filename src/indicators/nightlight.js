@@ -18,9 +18,8 @@
  * Copyright 2017-2018 Julio Galvan
  */
 
-const St = imports.gi.St;
+const { Gio, GObject, St } = imports.gi;
 const Lang = imports.lang;
-const Gio = imports.gi.Gio;
 const Main = imports.ui.main;
 const Slider = imports.ui.slider;
 const PopupMenu = imports.ui.popupMenu;

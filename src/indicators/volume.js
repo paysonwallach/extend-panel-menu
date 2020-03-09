@@ -18,11 +18,9 @@
  * Copyright 2017-2018 Julio Galvan
  */
 
-const St = imports.gi.St;
+const { Clutter, GObject, Shell, St } = imports.gi;
 const Lang = imports.lang;
 const Main = imports.ui.main;
-const Shell = imports.gi.Shell;
-const Clutter = imports.gi.Clutter;
 const PopupMenu = imports.ui.popupMenu;
 const Gettext = imports.gettext.domain("extend-panel-menu");
 const _ = Gettext.gettext;

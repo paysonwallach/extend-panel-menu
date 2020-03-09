@@ -18,10 +18,8 @@
  * Copyright 2017-2018 Julio Galvan
  */
 
-const St = imports.gi.St;
+const { GObject, Shell, St } = imports.gi;
 const Lang = imports.lang;
-const Gio = imports.gi.Gio;
-const Shell = imports.gi.Shell;
 const PanelMenu = imports.ui.panelMenu;
 
 var CustomButton = class Button extends PanelMenu.Button {
