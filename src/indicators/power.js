@@ -28,7 +28,8 @@ const _ = Gettext.gettext;
 const Extension = imports.misc.extensionUtils.getCurrentExtension();
 const CustomButton = Extension.imports.indicators.button.CustomButton;
 
-var PowerIndicator = class PowerIndicator extends CustomButton {
+var PowerIndicator = GObject.registerClass(
+class PowerIndicator extends CustomButton {
   _init() {
     super.init("PowerIndicator");
     this.menu.actor.add_style_class_name("aggregate-menu");
@@ -144,4 +145,4 @@ var PowerIndicator = class PowerIndicator extends CustomButton {
     );
     super._onDestroy();
   }
-};
+});

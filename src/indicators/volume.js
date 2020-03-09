@@ -28,7 +28,8 @@ const Extension = imports.misc.extensionUtils.getCurrentExtension();
 const CustomButton = Extension.imports.indicators.button.CustomButton;
 const ExtensionUtils = imports.misc.extensionUtils;
 
-var VolumeIndicator = class VolumeIndicator extends CustomButton {
+var VolumeIndicator = GObject.registerClass(
+class VolumeIndicator extends CustomButton {
   _init() {
     super.init("VolumeIndicator");
     this._settings = ExtensionUtils.getSettings();
@@ -136,4 +137,4 @@ var VolumeIndicator = class VolumeIndicator extends CustomButton {
     Main.panel.statusArea.dateMenu._messageList._addSection(this._mediaSection);
     super._onDestroy();
   }
-};
+});

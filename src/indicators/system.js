@@ -26,7 +26,8 @@ const _ = Gettext.gettext;
 const Extension = imports.misc.extensionUtils.getCurrentExtension();
 const CustomButton = Extension.imports.indicators.button.CustomButton;
 
-var UserIndicator = class UserIndicator extends CustomButton {
+var UserIndicator = GObject.registerClass(
+class UserIndicator extends CustomButton {
   _init() {
     super.init("UserIndicator");
     this._system = new imports.ui.status.system.Indicator();
@@ -157,4 +158,4 @@ var UserIndicator = class UserIndicator extends CustomButton {
       this._nameLabel.show();
     }
   }
-};
+});

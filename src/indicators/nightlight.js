@@ -28,7 +28,8 @@ const _ = Gettext.gettext;
 const Extension = imports.misc.extensionUtils.getCurrentExtension();
 const CustomButton = Extension.imports.indicators.button.CustomButton;
 
-var NightLightIndicator = class NightLightIndicator extends CustomButton {
+var NightLightIndicator = GObject.registerClass(
+class NightLightIndicator extends CustomButton {
   _init() {
     super.init("NightLightIndicator");
     this.menu.actor.add_style_class_name("aggregate-menu");
@@ -130,4 +131,4 @@ var NightLightIndicator = class NightLightIndicator extends CustomButton {
     this._nightLight.indicators.add_actor(this._nightLight._indicator);
     super._onDestroy();
   }
-};
+});
