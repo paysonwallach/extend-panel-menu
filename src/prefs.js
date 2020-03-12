@@ -32,8 +32,11 @@ const Lang = imports.lang;
 const Extension = imports.misc.extensionUtils.getCurrentExtension();
 const MenuItems = Extension.imports.menuItems;
 
+const {registerResources} = Me.imports.convenience;
+
 function init() {
   ExtensionUtils.initTranslations("extend-panel-menu");
+  registerResources();
 }
 
 const IconButton = new GObject.Class({
