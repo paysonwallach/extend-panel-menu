@@ -2,8 +2,8 @@
 <gresources>
   <gresource prefix="/org/gnome/shell/extensions/extend-panel-menu">
     <!-- Icons -->
-    <file compressed="true">icons/extend-panel-menu.png</file>
-    <file compressed="true" preprocess="xml-stripblanks">icons/notifications-symbolic.svg</file>
-    <file compressed="true" preprocess="xml-stripblanks">icons/notification-new-symbolic.svg</file>
+    <file>icons/extend-panel-menu.png</file>
+    <file preprocess="xml-stripblanks">icons/notifications-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/notification-new-symbolic.svg</file>
   </gresource>
 </gresources>
