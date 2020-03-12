@@ -131,7 +131,7 @@ var MessagesIndicator = class MessagesIndicator {
   }
 
   _onSourceAdded(tray, source) {
-    source.connect("count-updated", () => this._updateCount());
+    source.connect("notify::count", () => this._updateCount());
     this._sources.push(source);
     this._updateCount();
   }
